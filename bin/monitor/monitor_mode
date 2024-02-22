@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+EXTERNAL_OUTPUT="DP-6"
+INTERNAL_OUTPUT="eDP-1"
+
+# if we don't have a file, start at zero
+if [ ! -f "/tmp/monitor_mode.dat" ] ; then
+  monitor_mode="all"
+
+# otherwise read the value from the file
+else
+  monitor_mode=`cat /tmp/monitor_mode.dat`
+fi
+
+# if only one monitor is connected (should be internal as this is a laptop)
+# set mode to internal
+num_connected_monitors=$(swaymsg -t get_outputs | grep "Output" | wc -l) 
+if [ $num_connected_monitors -eq 1 ]; then
+        monitor_mode="INTERNAL"
+        swaymsg output $INTERNAL_OUTPUT enable; swaymsg output $EXTERNAL_OUTPUT disable; 
+        echo "${monitor_mode}" > /tmp/monitor_mode.dat
+        exit 0
+fi
+
+if [ $monitor_mode = "all" ]; then
+        monitor_mode="EXTERNAL"
+        swaymsg output $INTERNAL_OUTPUT disable; swaymsg output $EXTERNAL_OUTPUT enable;
+elif [ $monitor_mode = "EXTERNAL" ]; then
+        monitor_mode="INTERNAL"
+        swaymsg output $INTERNAL_OUTPUT enable; swaymsg output $EXTERNAL_OUTPUT disable; 
+else
+        monitor_mode="all"
+        swaymsg output $INTERNAL_OUTPUT enable; swaymsg output $EXTERNAL_OUTPUT enable;
+        swaymsg output $INTERNAL_OUTPUT pos 3440 0; swaymsg output $EXTERNAL_OUTPUT pos 0 0; 
+fi
+echo "${monitor_mode}" > /tmp/monitor_mode.dat
+exit 0
