@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+swaymsg exec -q "exec $(compgen -c | fzf --color=dark --reverse --border=double --border-label="  Launcher  ")"

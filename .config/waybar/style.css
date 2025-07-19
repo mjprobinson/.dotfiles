@@ -1,0 +1,127 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+#window {
+    font-weight: bold;
+    font-family: JetBrainsMono;
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #c9545d;
+    border-top: 2px solid #c9545d;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #battery, #cpu, #memory, #disk, #pulseaudio, #tray, #mode, #idle_inhibitor {
+    padding: 0 3px;
+    margin: 0 4px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#battery {
+}
+
+@keyframes blink-charge {
+    to {
+        color: green;
+    }
+}
+
+@keyframes blink-warn {
+    to {
+        color: yellow;
+    }
+}
+
+@keyframes blink-crit {
+    to {
+        color: red;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink-crit;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging {
+    color: white;
+    animation-name: blink-charge;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#memory.high {
+    color: white;
+    animation-name: blink-warn;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.critical {
+    color: white;
+    animation-name: blink-crit;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#tray {
+}
