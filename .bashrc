@@ -123,3 +123,8 @@ PATH=$PATH:/home/michael/bin
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/go/bin
 . "$HOME/.cargo/env"
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
