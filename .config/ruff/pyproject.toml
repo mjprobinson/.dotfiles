@@ -1,0 +1,18 @@
+[tool.ruff]
+line_length = 100
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "B'"]
+
+ignore = [
+    "E501", # line length violations
+    "E741", # ambiguous variable names
+    "E266", # too many # at start of comment block
+]
+
+unfixable = ["B"]
+
+# Ignore import violations
+[tool.ruff.lint.per-file-ignore]
+"__init__.py" = ["E402"]
+"path/to/file.py" = ["E402"]
