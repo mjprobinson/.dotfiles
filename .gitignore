@@ -1,2 +1,3 @@
 .config/atuin/atuin-receipt.json
 .config/nvim/lazy-lock.json
+.local/bin/nvim
