@@ -1,3 +1,5 @@
 .config/atuin/atuin-receipt.json
 .config/nvim/lazy-lock.json
 .local/bin/nvim
+.local/bin/kitty
+.local/bin/kitten
