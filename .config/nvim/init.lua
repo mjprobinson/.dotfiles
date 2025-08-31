@@ -2,9 +2,9 @@
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
-          
+
 Kickstart.nvim is *not* a distribution.
-          
+
 Kickstart.nvim is a template for your own configuration.
   The goal is that you can read every line of code, top-to-bottom, understand what your configuration is doing, and modify it to suit your needs.
 
@@ -85,7 +85,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -186,8 +186,8 @@ require('lazy').setup({
     },
   },
 
-    -- Catppuccin Theme
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- Catppuccin Theme
+  { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
 
   {
     -- Set lualine as statusline
@@ -213,12 +213,12 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',    opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
+    branch = 'master',
     dependencies = {
       'nvim-lua/plenary.nvim',
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -258,12 +258,12 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' }
-  
+
   --Add more plugins here
   --
   --Scrollbar
   { "petertriho/nvim-scrollbar" },
-  
+
   --Autopair
   {
     'windwp/nvim-autopairs',
@@ -271,9 +271,9 @@ require('lazy').setup({
     opts = {}
   },
   -- Center buffer
-  {{"shortcuts/no-neck-pain.nvim", version = "*"}}
+  { { "shortcuts/no-neck-pain.nvim", version = "*" } }
 }, {})
-    
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -326,7 +326,7 @@ vim.o.termguicolors = true
 vim.o.relativenumber = true
 
 -- Ruler formatting
-vim.opt.colorcolumn = {80,100}
+vim.opt.colorcolumn = { 80, 100 }
 
 -- Cursorline
 vim.opt.cursorline = true
@@ -335,9 +335,9 @@ vim.opt.cursorline = true
 local frappe = require("catppuccin.palettes").get_palette "frappe"
 require('catppuccin').setup({
   custom_highlights = {
-    CursorLineNr = { fg = frappe.pink, bold = true},
-    LineNrAbove = { fg = frappe.text},
-    LineNrBelow = { fg = frappe.text}
+    CursorLineNr = { fg = frappe.pink, bold = true },
+    LineNrAbove = { fg = frappe.text },
+    LineNrBelow = { fg = frappe.text }
   }
 })
 
@@ -570,22 +570,30 @@ local on_attach = function(_, bufnr)
 end
 
 -- document existing key chains
-require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-}
+require('which-key').add({
+  { "<leader>c",  group = "[C]ode" },
+  { "<leader>c_", hidden = true },
+  { "<leader>d",  group = "[D]ocument" },
+  { "<leader>d_", hidden = true },
+  { "<leader>g",  group = "[G]it" },
+  { "<leader>g_", hidden = true },
+  { "<leader>h",  group = "Git [H]unk" },
+  { "<leader>h_", hidden = true },
+  { "<leader>r",  group = "[R]ename" },
+  { "<leader>r_", hidden = true },
+  { "<leader>s",  group = "[S]earch" },
+  { "<leader>s_", hidden = true },
+  { "<leader>t",  group = "[T]oggle" },
+  { "<leader>t_", hidden = true },
+  { "<leader>w",  group = "[W]orkspace" },
+  { "<leader>w_", hidden = true },
+})
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
-require('which-key').register({
-  ['<leader>'] = { name = 'VISUAL <leader>' },
-  ['<leader>h'] = { 'Git [H]unk' },
-}, { mode = 'v' })
+require('which-key').add({
+  { "<leader>",  group = "VISUAL <leader>", mode = "v" },
+  { "<leader>h", desc = "Git [H]unk",       mode = "v" },
+})
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
@@ -715,11 +723,10 @@ require('no-neck-pain').setup({
 })
 
 -- Custom Write and Explore command
-vim.api.nvim_create_user_command('WExp', 
+vim.api.nvim_create_user_command('WExp',
   function()
     vim.cmd("w")
     vim.cmd("Explore")
   end,
   {}
 )
-
