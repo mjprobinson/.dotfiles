@@ -715,7 +715,7 @@ require('scrollbar').setup()
 
 -- No Neck Pain setup
 require('no-neck-pain').setup({
-  width = 200,
+  width = 120,
   autocmds = {
     enableOnVimEnter = true,
     enableOnTabEnter = true
