@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrainsMono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
     min-height: 0;
 }
@@ -13,7 +13,7 @@ window#waybar {
 
 #window {
     font-weight: bold;
-    font-family: JetBrainsMono;
+    font-family: JetBrainsMono Nerd Font;
 }
 /*
 #workspaces {
