@@ -3,7 +3,7 @@
 # shellcheck disable=SC1091
 source "$HOME/.config/waybar/scripts/theme-switcher.sh" 'fzf'
 
-list=$(printf '%s\n' 'Lock' 'Shutdown' 'Reboot' 'Logout' 'Hibernate' 'Suspend')
+list=$(printf '%s\n' 'Lock' 'Logout' 'Suspend' 'Reboot' 'Shutdown')
 
 options=(
 	--border=sharp
@@ -22,10 +22,21 @@ selected=$(fzf "${options[@]}" <<<"$list")
 [[ -z $selected ]] && exit 0
 
 case "$selected" in
-	'Lock') loginctl lock-session ;;
-	'Shutdown') systemctl poweroff ;;
-	'Reboot') systemctl reboot ;;
-	'Logout') loginctl terminate-session "$XDG_SESSION_ID" ;;
-	'Hibernate') systemctl hibernate ;;
-	'Suspend') systemctl suspend ;;
+    'Lock')
+        bash -c 'swaylock -C $HOME/.config/swaylock/config'
+        ;;
+    'Logout')
+        swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+        ;;
+    'Suspend')
+        systemctl suspend
+        ;;
+    'Reboot')
+        systemctl reboot
+        ;;
+    'Shutdown')
+        systemctl poweroff
+        ;;
 esac
+
+exit 0

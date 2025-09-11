@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 lock() {
     swaylock -f -C $HOME/.config/swaylock/config

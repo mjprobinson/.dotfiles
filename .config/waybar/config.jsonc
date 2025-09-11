@@ -125,6 +125,9 @@ Had to move from modules to one file because of different waybar version
 		// "on-scroll-down":
 		"cursor": true
 	},
+	"sway/mode": {
+		"max-length": 200
+	},
 
 	/*-------------
 		custom
@@ -258,6 +261,7 @@ Had to move from modules to one file because of different waybar version
 		// "design-capacity":
 		// "full-at":
 		// "interval":
+		"interval": 30,
 		"states": {
 			"warning": 20,
 			"critical": 10

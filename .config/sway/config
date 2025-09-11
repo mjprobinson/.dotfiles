@@ -193,7 +193,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Locking and power mode
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) , (e) 󰍃, (s) 󰒲, (h) , (r) 󰜉, (Shift+s) 
 mode "$mode_system" {
     bindsym l exec "~/.local/bin/sway/swayexit lock", mode "default"
     bindsym e exec "~/.local/bin/sway/swayexit logout", mode "default"
