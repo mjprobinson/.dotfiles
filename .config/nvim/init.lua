@@ -332,17 +332,17 @@ vim.opt.colorcolumn = { 80, 100 }
 vim.opt.cursorline = true
 
 -- Catppuccin setup
-local frappe = require("catppuccin.palettes").get_palette "frappe"
+local mocha = require("catppuccin.palettes").get_palette "mocha"
 require('catppuccin').setup({
   custom_highlights = {
-    CursorLineNr = { fg = frappe.pink, bold = true },
-    LineNrAbove = { fg = frappe.text },
-    LineNrBelow = { fg = frappe.text }
+    CursorLineNr = { fg = mocha.rosewater, bold = true },
+    LineNrAbove = { fg = mocha.text },
+    LineNrBelow = { fg = mocha.text }
   }
 })
 
 -- Set colorscheme
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "catppuccin-mocha"
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience

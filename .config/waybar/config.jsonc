@@ -135,7 +135,7 @@ Had to move from modules to one file because of different waybar version
 	},
 	"custom/power_menu": {
 		"format": "󰤄",
-		"on-click": "~/.local/bin/kitty .config/waybar/scripts/power-menu.sh",
+		"on-click": "swaymsg 'exec $term --class pop-up-script -e .config/waybar/scripts/power-menu.sh'",
 		"tooltip": false
 	},
 	"custom/system_update": {
@@ -152,7 +152,7 @@ Had to move from modules to one file because of different waybar version
 		// "rotate":
 		"min-length": 2,
 		"max-length": 2,
-		"on-click": "~/.local/bin/kitty .config/waybar/scripts/system-update.sh start"
+		"on-click": "swaymsg 'exec $term --class pop-up-script -e .config/waybar/scripts/system-update.sh start'"
 		// "on-click-middle":
 		// "on-click-right":
 		// "on-scroll-up":
@@ -301,7 +301,7 @@ Had to move from modules to one file because of different waybar version
 		// "rotate":
 		"min-length": 2,
 		"max-length": 2,
-		"on-click": "~/.local/bin/kitty .config/waybar/scripts/bluetooth.sh",
+		"on-click": "swaymsg 'exec $term --class pop-up-script -e .config/waybar/scripts/bluetooth.sh'",
 		// "on-click-middle":
 		"on-click-right": "bluetoothctl power off && notify-send 'Bluetooth Off' -r 1925",
 		// "on-scroll-up":
@@ -477,7 +477,7 @@ Had to move from modules to one file because of different waybar version
 		// "rotate":
 		"min-length": 2,
 		"max-length": 2,
-		"on-click": "~/.local/bin/kitty ~/.config/waybar/scripts/network.sh",
+		"on-click": "swaymsg 'exec $term --class pop-up-script -e .config/waybar/scripts/network.sh'",
 		// "on-click-middle":
 		"on-click-right": "nmcli radio wifi off && notify-send 'Wi-Fi Disabled' -r 1125",
 		// "on-scroll-up":
