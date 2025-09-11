@@ -42,7 +42,7 @@ case $1 in
 					--color='bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284'
 					--color='fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf'
 					--color='marker:#babbf1,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284'
-					--color='selected-bg:#51576d'
+					#--color='selected-bg:#51576d'
 					--color='border:#737994,label:#c6d0f5'
 				)
 				;;
@@ -51,7 +51,7 @@ case $1 in
 					--color='bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39'
 					--color='fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78'
 					--color='marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39'
-					--color='selected-bg:#bcc0cc'
+					#--color='selected-bg:#bcc0cc'
 					--color='border:#9ca0b0,label:#4c4f69'
 				)
 				;;
@@ -60,7 +60,7 @@ case $1 in
 					--color='bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796'
 					--color='fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6'
 					--color='marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796'
-					--color='selected-bg:#494d64'
+					#--color='selected-bg:#494d64'
 					--color='border:#6e738d,label:#cad3f5'
 				)
 				;;
