@@ -359,6 +359,13 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Spellcheck
+vim.keymap.set('n',
+  '<leader>ls',
+  ":term set modifiable ; aspell check % --dont-backup<CR>",
+  { desc = '[L]anguage [S]pell check' }
+)
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -587,6 +594,8 @@ require('which-key').add({
   { "<leader>t_", hidden = true },
   { "<leader>w",  group = "[W]orkspace" },
   { "<leader>w_", hidden = true },
+  { "<leader>l", group = "[L]anguage"},
+  { "<leader>l_", hidden = true },
 })
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work

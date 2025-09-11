@@ -1,4 +1,5 @@
 # Read `man 5 sway` for a complete reference.
+include catppuccin-mocha
 
 ### Variables
 #
@@ -22,9 +23,9 @@ output * bg #000000 solid_color
 
 ### Idle configuration
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -C $HOME/.config/swaylock/config' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -C $HOME/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -239,4 +240,16 @@ include /etc/sway/config.d/*
 ### Aesthetics
 smart_borders on
 default_border pixel 1
-client.focused #ffffff #808080 #000000
+gaps outer 5
+gaps inner 15
+smart_gaps inverse_outer
+
+
+
+# Theme
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $red $rosewater
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+output * bg $base solid_color

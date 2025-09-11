@@ -84,6 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 set -o vi
+alias gs="git status"
+alias ta="tmux a"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
