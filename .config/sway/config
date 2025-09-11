@@ -13,13 +13,8 @@ set $right l
 # Your preferred terminal emulator
 set $term ~/.local/bin/kitty
 # Your preferred application launcher
-for_window [app_id="Launcher"] floating enable, sticky enable, border none, resize set 15 ppt 30 ppt
+for_window [app_id="Launcher"] floating enable, sticky enable, resize set 30 ppt 30 ppt
 set $menu exec $term --class Launcher -e ~/.local/bin/sway/fzf_launcher
-
-### Output configuration
-#
-# Wallpaper
-output * bg #000000 solid_color
 
 ### Idle configuration
 exec swayidle -w \
@@ -37,8 +32,6 @@ exec --no-startup-id nm-applet
 
 for_window [app_id="blueman-manager"] floating enable, resize set 50 ppt 50 ppt
 for_window [app_id="pavucontrol"] floating enable, resize set 50 ppt 50 ppt
-# MICHAEL, this works but it loads as a tile first then floats.
-# Can you run the script with a specific class?
 for_window [app_id="pop-up-script"] floating enable, sticky enable, resize set 50 ppt 30 ppt
 
 ### Input configuration
