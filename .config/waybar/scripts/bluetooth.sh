@@ -20,6 +20,7 @@ if [[ $status == 'off' ]]; then
 fi
 
 s=10
+bluetoothctl power on
 bluetoothctl --timeout $s scan on >/dev/null &
 
 for ((i = 1; i <= s; i++)); do
