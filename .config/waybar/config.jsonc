@@ -323,7 +323,7 @@ Had to move from modules to one file because of different waybar version
 	},
 	"clock#time": {
 		// "interval":
-		"format": "{:%H:%M}",
+		"format": "{:%I:%M}",
 		// "timezone":
 		// "timezones":
 		// "locale":
