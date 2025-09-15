@@ -50,7 +50,7 @@ function mnt_fs () {
 		echo "FS Already Mounted"
 	else
 		echo "Mounting FS"
-		sshfs -o default_permissions -o IdentityFile=~/.ssh/michael-laptop-server $MR_SERVER_USER@$MR_SERVER_ADDR:/home/$MR_SERVER_USER/ /mnt/mr-server/
+		sshfs -o default_permissions -o IdentityFile=$HOME/.ssh/mr-server $MR_SERVER_USER@$MR_SERVER_ADDR:/home/$MR_SERVER_USER/ /mnt/mr-server/
 	fi
 }
 
