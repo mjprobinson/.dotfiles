@@ -1,4 +1,4 @@
-return { 
+return {
     "folke/which-key.nvim",
     opt = {},
     spec = {
@@ -18,9 +18,9 @@ return {
         { "<leader>t_", hidden = true },
         { "<leader>w",  group = "[W]orkspace" },
         { "<leader>w_", hidden = true },
-        { "<leader>l", group = "[L]anguage"},
+        { "<leader>l",  group = "[L]anguage" },
         { "<leader>l_", hidden = true },
-        { "<leader>",  group = "VISUAL <leader>", mode = "v" },
-        { "<leader>h", desc = "Git [H]unk",       mode = "v" },
+        { "<leader>",   group = "VISUAL <leader>", mode = "v" },
+        { "<leader>h",  desc = "Git [H]unk",       mode = "v" },
     }
 }

@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>p", '"+p')
 
 -- Netrw
 vim.keymap.set("n", "<leader>e", ":Explore<CR>")
-vim.keymap.set("n", "<leader>w", ":write<CR>") 
+vim.keymap.set("n", "<leader>w", ":write<CR>")
 
 -- Center when jumping
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })

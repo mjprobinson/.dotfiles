@@ -79,5 +79,5 @@ return {
   },
   build = ':TSUpdate',
 
-  config = config() 
+  config = config()
 }
