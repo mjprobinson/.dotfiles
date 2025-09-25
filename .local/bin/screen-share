@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-
-export MOZ_ENABLE_WAYLAND=1
-/usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr
