@@ -89,6 +89,7 @@ Had to move from modules to one file because of different waybar version
     		"rewrite": {
     			"^$": "Desktop",
     			"(.*)Mozilla Firefox": "Browser",
+    			"(.*)LibreWolf": "Browser",
     			"^nvim (.*)": "Editor",
     			"^tmux(.*)": "Tmux",
     			"(.*)kitty(.*)": "Terminal",
