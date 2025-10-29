@@ -396,7 +396,7 @@ Had to move from modules to one file because of different waybar version
 		// "on-scroll-up":
 		// "on-scroll-down":
 		// "smooth-scrolling-threshold":
-		"tooltip": false
+		"tooltip": true
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
